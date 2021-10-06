@@ -3,10 +3,25 @@
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 var passwordLength;
-var characterLower;
-var characterUpper;
-var characterNumber;
-var characterSpecial;
+
+function characterLower() {
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+};
+
+function characterUpper() {
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+};
+
+function characterNumber() {
+  return String.fromCharCode(Math.floor(Math.random() * 9) + 49);
+};
+
+function characterSpecial() {
+  const symbols = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~"
+  return symbols[Math.floor(Math.random() * symbols.length)];
+};
+
+console.log(characterLower(), characterUpper(), characterNumber(), characterSpecial())
 
 // Write password to the #password input
 function writePassword() {
