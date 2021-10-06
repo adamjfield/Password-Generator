@@ -3,6 +3,10 @@
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 var passwordLength;
+var characterLower;
+var characterUpper;
+var characterNumber;
+var characterSpecial;
 
 // Write password to the #password input
 function writePassword() {
@@ -18,7 +22,7 @@ function generatePassword() {
     "How many characters would you like your password to contain? Must be between 8-128 characters."
   );
   if (!passwordLength) {
-    alert("This needs a value!")
+    alert("This needs a value!");
   } else if (passwordLength < 8 || passwordLength > 128) {
     alert("Must enter a value between 8 - 128!");
   }
