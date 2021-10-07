@@ -4,17 +4,84 @@
 var generateBtn = document.querySelector("#generate");
 var passwordLength = passwordLength;
 var characterNumber = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var characterSpecial = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
-var characterLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var characterUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var passwordChoices = [];
+var characterSpecial = [
+  "!",
+  "%",
+  "&",
+  ",",
+  "*",
+  "+",
+  "-",
+  ".",
+  "/",
+  "<",
+  ">",
+  "?",
+  "~",
+];
+var characterLower = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
+var characterUpper = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+];
 
 // Write password to the #password input
 
 function generatePassword() {
   // when the user selects generate password button a
   // user types length they wish password to be between 8 & 128 characters
-   var passwordLength = prompt(
+  var passwordLength = prompt(
     "How many characters would you like your password to contain? Must be between 8-128 characters."
   );
   if (!passwordLength) {
@@ -42,6 +109,7 @@ function generatePassword() {
       "Click OK to confirm including uppercase characters."
     );
   }
+  var passwordChoices = [];
   // at least one character type must be selected
   // if one is not they show alert informing user one must be selected
   if (
@@ -67,15 +135,15 @@ function generatePassword() {
     passwordChoices = passwordChoices.concat(characterNumber);
   }
 
-  var randomPassword = ""
-  
+  var randomPassword = "";
+
   //   // once user has confirmed their password criteria the
   //   // function will generate and randomize the password
   for (var i = 0; i < passwordLength; i++) {
-    randomPassword = randomPassword + passwordChoices[Math.floor(Math.random() * passwordChoices.length)];
-    console.log(password)
-  };
-
+    randomPassword =
+      randomPassword +
+      passwordChoices[Math.floor(Math.random() * passwordChoices.length)];
+  }
   return randomPassword;
 }
 
